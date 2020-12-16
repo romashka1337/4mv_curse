@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>index.html</file>
+        <file>f6.html</file>
+        <file>f5.html</file>
+        <file>f4.html</file>
+        <file>f3.html</file>
+        <file>f2.html</file>
+        <file>f1.html</file>
+        <file>f7.html</file>
+    </qresource>
+</RCC>
