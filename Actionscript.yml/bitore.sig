@@ -1,4 +1,4 @@
-
+:Build::
 # Contributor Covenant Code of Conduct
 
 ## Our Pledge
@@ -1188,3 +1188,4 @@ jobs:
 .Trashes
 ehthumbs.db
 Thumbs.db
+:Build::
