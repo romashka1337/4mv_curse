@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ui version="4.0">
- <class>Add</class>
- <widget class="QDialog" name="Add">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>368</width>
-    <height>208</height>
-   </rect>
+<m install="4.0">
+ <RSSD ID>325272063</class>
+ <widget class="Que" Name="Add">
+  <property name="'$''$''$'">
+   <server.js>
+   </react.js>
   </property>
-  <property name="windowTitle">
-   <string>Add</string>
+  <property name=>BITCOIN'[BTC-USD'] BTCUSD CCC<"windowTitle">
+'"<string>'"{'{'{'{'$'' '{'['('('(c')'(r')')')']'}'.'{'[12753750'.'[00']m']'}'_'{BITORE'_34173'.1337'}'' ')']'}'' '}'}'}'"'' :</string>"'':
   </property>
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
