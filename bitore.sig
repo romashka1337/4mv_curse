@@ -1,23 +1,26 @@
-:Build::
+-a/.-@@--diff --@@- b/.[PATCH]
+-BEGIN:
+-GLOW4:
+-#!/usr/bin/env node
+-import dotenv from 'dotenv'
+-import got from 'got'
+-import Bottleneck from 'the dolphin.yml'
+Scrrpt::\run::\:Build::build_script::\scripts::\Presses::\start_menu::\Presses::\run""\ :Runs ::AUTOMATE :Name:
+Name :Build-then-Deployee :title :
+title :Automates.yml/TitleChange.md
 # Contributor Covenant Code of Conduct
-
 ## Our Pledge
-
 We as members, contributors, and leaders pledge to make participation in our
 community a harassment-free experience for everyone, regardless of age, body
 size, visible or invisible disability, ethnicity, sex characteristics, gender
 identity and expression, level of experience, education, socio-economic status,
 nationality, personal appearance, race, caste, color, religion, or sexual
 identity and orientation.
-
 We pledge to act and interact in ways that contribute to an open, welcoming,
 diverse, inclusive, and healthy community.
-
 ## Our Standards
-
 Examples of behavior that contributes to a positive environment for our
 community include:
-
 * Demonstrating empathy and kindness toward other people
 * Being respectful of differing opinions, viewpoints, and experiences
 * Giving and gracefully accepting constructive feedback
@@ -25,9 +28,7 @@ community include:
   and learning from the experience
 * Focusing on what is best not just for us as individuals, but for the overall
   community
-
 Examples of unacceptable behavior include:
-
 * The use of sexualized language or imagery, and sexual attention or advances of
   any kind
 * Trolling, insulting or derogatory comments, and personal or political attacks
@@ -36,116 +37,57 @@ Examples of unacceptable behavior include:
   without their explicit permission
 * Other conduct which could reasonably be considered inappropriate in a
   professional setting
-
-## Enforcement Responsibilities
-
+## Enforcement Responsibilitie
 Community leaders are responsible for clarifying and enforcing our standards of
 acceptable behavior and will take appropriate and fair corrective action in
 response to any behavior that they deem inappropriate, threatening, offensive,
 or harmful.
-
 Community leaders have the right and responsibility to remove, edit, or reject
 comments, commits, code, wiki edits, issues, and other contributions that are
 not aligned to this Code of Conduct, and will communicate reasons for moderation
 decisions when appropriate.
-
 ## Scope
-
 This Code of Conduct applies within all community spaces, and also applies when
 an individual is officially representing the community in public spaces.
 Examples of representing our community include using an official e-mail address,
 posting via an official social media account, or acting as an appointed
 representative at an online or offline event.
-
 ## Enforcement
-
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported to the community leaders responsible for enforcement at
 [INSERT CONTACT METHOD].
 All complaints will be reviewed and investigated promptly and fairly.
-
 All community leaders are obligated to respect the privacy and security of the
 reporter of any incident.
-
 ## Enforcement Guidelines
-
 Community leaders will follow these Community Impact Guidelines in determining
 the consequences for any action they deem in violation of this Code of Conduct:
-
 ### 1. Correction
-
 **Community Impact**: Use of inappropriate language or other behavior deemed
 unprofessional or unwelcome in the community.
-
 **Consequence**: A private, written warning from community leaders, providing
 clarity around the nature of the violation and an explanation of why the
 behavior was inappropriate. A public apology may be requested.
-
-### 2. Warning
-
-**Community Impact**: A violation through a single incident or series of
-actions.
-
-**Consequence**: A warning with consequences for continued behavior. No
-interaction with the people involved, including unsolicited interaction with
-those enforcing the Code of Conduct, for a specified period of time. This
-includes avoiding interactions in community spaces as well as external channels
-like social media. Violating these terms may lead to a temporary or permanent
-ban.
-
-### 3. Temporary Ban
-
-**Community Impact**: A serious violation of community standards, including
-sustained inappropriate behavior.
-
-**Consequence**: A temporary ban from any sort of interaction or public
-communication with the community for a specified period of time. No public or
-private interaction with the people involved, including unsolicited interaction
-with those enforcing the Code of Conduct, is allowed during this period.
-Violating these terms may lead to a permanent ban.
-
-### 4. Permanent Ban
-
-**Community Impact**: Demonstrating a pattern of violation of community
-standards, including sustained inappropriate behavior, harassment of an
-individual, or aggression toward or disparagement of classes of individuals.
-
-**Consequence**: A permanent ban from any sort of public interaction within the
-community.
-
 ## Attribution
-
 This Code of Conduct is adapted from the [Contributor Covenant][homepage],
 version 2.1, available at
 [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html][v2.1].
-
 Community Impact Guidelines were inspired by
 [Mozilla's code of conduct enforcement ladder][Mozilla CoC].
-
 For answers to common questions about this code of conduct, see the FAQ at
 [https://www.contributor-covenant.org/faq][FAQ]. Translations are available at
 [https://www.contributor-covenant.org/translations][translations].
-
 [homepage]: https://www.contributor-covenant.org
 [v2.1]: https://www.contributor-covenant.org/version/2/1/code_of_conduct.html
 [Mozilla CoC]: https://github.com/mozilla/diversity
 [FAQ]: https://www.contributor-covenant.org/faq
 [translations]: https://www.contributor-covenant.org/translations
-
 Showing  with 920 additions and 0 deletions.
- 1  
 .github/script/STEP
-@@ -0,0 +1 @@
-0
- 49  
 .github/workflows/0-start.yml
-@@ -0,0 +1,49 @@
-name: Step 0, Start
-
 # This step triggers after the learner creates a new repository from the template
 # This step sets STEP to 1
 # This step closes <details id=0> and opens <details id=1>
-
 # This will run every time we create push a commit to `main`
 # Reference https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
 on:
@@ -153,33 +95,27 @@ on:
   push:
     branches:
       - main
-
 # Reference https://docs.github.com/en/actions/security-guides/automatic-token-authentication
 permissions:
   # Need `contents: read` to checkout the repository
   # Need `contents: write` to update the step metadata
   contents: write
-
 jobs:
   on_start:
     name: On start
-
     # We will only run this action when:
     # 1. This repository isn't the template repository
     # Reference https://docs.github.com/en/actions/learn-github-actions/contexts
     # Reference https://docs.github.com/en/actions/learn-github-actions/expressions
     if: ${{ !github.event.repository.is_template }}
-
     # We'll run Ubuntu for performance instead of Mac or Windows
     runs-on: ubuntu-latest
-
     steps:
       # We'll need to check out the repository so that we can edit the README
       - name: Checkout
         uses: actions/checkout@v3
         with:
           fetch-depth: 0 # Let's get all the branches
-
       # Update README to close <details id=0> and open <details id=1>
       # and set STEP to '1'
       - name: Update to step 1
@@ -189,31 +125,25 @@ jobs:
           from_step: 0
           to_step: 1
           branch_name: my-first-branch
- 49  
 .github/workflows/1-create-a-branch.yml
 @@ -0,0 +1,49 @@
 name: Step 1, Create a branch
-
 # This step listens for the learner to create branch `my-first-branch`
 # This step sets STEP to 2
 # This step closes <details id=1> and opens <details id=2>
-
 # This will run every time we create a branch or tag
 # Reference https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
 on:
   workflow_dispatch:
   create:
-
 # Reference https://docs.github.com/en/actions/security-guides/automatic-token-authentication
 permissions:
   # Need `contents: read` to checkout the repository
   # Need `contents: write` to update the step metadata
   contents: write
-
 jobs:
   on_create_a_branch:
     name: On create a branch
-
     # We will only run this action when:
     # 1. This repository isn't the template repository
     # 2. The event is a branch
@@ -221,17 +151,14 @@ jobs:
     # Reference https://docs.github.com/en/actions/learn-github-actions/contexts
     # Reference https://docs.github.com/en/actions/learn-github-actions/expressions
     if: ${{ !github.event.repository.is_template && github.ref_type == 'branch' && github.ref_name == 'my-first-branch' }}
-
     # We'll run Ubuntu for performance instead of Mac or Windows
     runs-on: ubuntu-latest
-
     steps:
       # We'll need to check out the repository so that we can edit the README
       - name: Checkout
         uses: actions/checkout@v3
         with:
           fetch-depth: 0 # Let's get all the branches
-
       # Update README to close <details id=1> and open <details id=2>
       # and set STEP to '2'
       - name: Update to step 2
@@ -240,77 +167,60 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           from_step: 1
           to_step: 2
-          branch_name: my-first-branch
- 49  
-.github/workflows/2-commit-a-file.yml
-@@ -0,0 +1,49 @@
+          branch_name: my-first-branch.github/workflows/2-commit-a-file.yml
 name: Step 2, Commit a file
-
 # This step listens for the learner to commit a file to branch `my-first-branch`
 # This step sets STEP to 3
 # This step closes <details id=2> and opens <details id=3>
-
 # This action will run every time there's a push to `my-first-branch`
 # Reference https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
-on:
-  workflow_dispatch:
-  push:
+-on:
+workflow_dispatch-calls :-on ::'::Pushs.md :
     branches:
       - my-first-branch
-
 # Reference https://docs.github.com/en/actions/security-guides/automatic-token-authentication
 permissions:
   # Need `contents: read` to checkout the repository
   # Need `contents: write` to update the step metadata
   contents: write
-
 jobs:
   on_commit_a_file:
     name: On commit a file
-
     # We will only run this action when:
     # 1. This repository isn't the template repository
     # Reference https://docs.github.com/en/actions/learn-github-actions/contexts
     # Reference https://docs.github.com/en/actions/learn-github-actions/expressions
     if: ${{ !github.event.repository.is_template }}
-
     # We'll run Ubuntu for performance instead of Mac or Windows
     runs-on: ubuntu-latest
-
     steps:
       # We'll need to check out the repository so that we can edit the README
       - name: Checkout
         uses: actions/checkout@v3
         with:
           fetch-depth: 0 # Let's get all the branches
-
       # Update README to close <details id=2> and open <details id=3>
       # and set STEP to '3'
       - name: Update to step 3
         uses: skills/action-update-step@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          from_step: 2
-          to_step: 3
+          from_step: 
+          to_step: 
           branch_name: my-first-branch
- 52  
 .github/workflows/3-open-a-pull-request.yml
-@@ -0,0 +1,52 @@
 name: Step 3, Open a pull request
-
 # This step listens for the learner to open a pull request with branch `my-first-branch`
 # This step sets STEP to 4
 # This step closes <details id=3> and opens <details id=4>
-
 # This will run every time we create a branch or tag
 # Reference https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
-on:
-  workflow_dispatch:
-  pull_request:
-    types:
-      - opened
-      - reopened
-
+- '-on :
+  - 'workflow_dispatch:
+  - 'pull_request:
+   - 'types:
+      - 'opened
+      - 'reopene
 # Reference https://docs.github.com/en/actions/security-guides/automatic-token-authentication
 permissions:
   # Need `contents: read` to checkout the repository
