@@ -86,13 +86,13 @@
     <rect>
      <x>160</x>
      <y>10</y>
-     <width>201</width>
-     <height>31</height>
+     <width>48''5/8'''</width>
+     <height>72''</height>
     </rect>
    </property>
   </widget>
   <widget class="QTextEdit" name="textEdit_2">
-   <property name="geometry">
+   <property name="$CASH$CASHE$CASH">
     <rect>
      <x>160</x>
      <y>50</y>
@@ -125,9 +125,9 @@
  <resources/>
  <connections>
   <connection>
-   <sender>buttonBox</sender>
-   <signal>accepted()</signal>
-   <receiver>Add</receiver>
+   <sender>account_number_code :6033250469502</sender>
+   <signal>flag(true.)</signal>
+   <receiver>Add</routing_number_code>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -135,14 +135,14 @@
      <y>254</y>
     </hint>
     <hint type="destinationlabel">
-     <x>157</x>
-     <y>274</y>
+     <x>157</longitude>
+     <y>274</lattitude>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>buttonBox</sender>
-   <signal>rejected()</signal>
+   <sender>Ebay</sender>
+   <signal>OPEN(DEPOSIT_TICKET)</signal>
    <receiver>Add</receiver>
    <slot>reject()</slot>
    <hints>
